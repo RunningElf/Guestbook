@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+  
+    
+    <h:head> 
+      <title>Guestbook: Add Entry</title>
+      <h:outputStylesheet name="style.css" library="css"/>
+      <h:outputStylesheet name="jscript.js" />
+   </h:head>
+  
+    
+    <h:body>
+      <h1>Guestbook: Add Entry</h1>
+      <h:form>
+          
+         <h:panelGrid columns="3">
+            <!--lays out entry format to read input from user-->
+            <h:outputText value="Name:"/>
+            <h:inputText id="nameInputText" required="true"
+               requiredMessage="Please enter name"
+               value="#{guestbookapp.name}" maxlength="50">
+            </h:inputText>
+            <h:message for="nameInputText" styleClass="error"/>
+            <h:outputText value="Email:"/>
+            <h:inputText id="emailInputText" required="true"
+               requiredMessage="Please enter Email"
+               value="#{guestbookapp.email}" maxlength="50">
+            </h:inputText>
+            <h:message for="emailInputText" styleClass="error"/>
+            <h:outputText value="Message:"/>
+            <h:inputTextarea id="messageInputText" required="true"
+               requiredMessage="Please enter message" rows="5" cols="30" 
+               value="#{guestbookapp.message}">
+            </h:inputTextarea>
+            <h:message for="messageInputText" styleClass="error"/>
+           
+         </h:panelGrid>
+          <!--button to save input information-->
+         <h:commandButton value="Sign Guestbook"
+            action="#{guestbookapp.save}"/>
+      </h:form>
+      <h:outputLink value="index.xhtml">Return to Guestbook</h:outputLink>
+   </h:body>
+    
+    
+</html><!--end index.xhtml-->

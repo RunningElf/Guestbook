@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:h="http://java.sun.com/jsf/html"
+   xmlns:f="http://java.sun.com/jsf/core">
+   <h:head>
+     
+       
+       
+       <title>Guest Book Application</title>
+      <h:outputStylesheet name="style.css" library="css"/>
+   </h:head>
+   <h:body> 
+     
+       <h1>Guest Book</h1>
+      <h:form>
+          <!--button to add new guest entry-->
+         <p><h:commandButton value="Add Entry" action="newEntry"/></p>
+      </h:form>
+       
+       <!--lays out tabular format for database entry-->
+      <h:dataTable value="#{guestbookapp.guests}" var="guest"
+         rowClasses="oddRows,evenRows" headerClass="header"
+         styleClass="table" cellpadding="5" cellspacing="0">
+        
+          <h:column>
+            <f:facet name="header">Date</f:facet>
+            #{guest.DATE}
+         </h:column>
+        
+          <h:column>
+            <f:facet name="header">Name</f:facet>
+            #{guest.NAME}
+         </h:column>
+       
+          <h:column>
+            <f:facet name="header">Email</f:facet>
+            #{guest.EMAIL}
+         </h:column>
+       
+          <h:column>
+            <f:facet name="header">Message</f:facet>
+            #{guest.MESSAGE}
+         </h:column>
+        
+         
+          
+      
+         
+          
+      </h:dataTable>
+   </h:body>
+</html>
+

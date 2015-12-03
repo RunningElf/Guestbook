@@ -1,0 +1,35 @@
+/* 
+    Created on : Dec 2, 2015, 3:41:29 PM
+    Author     : hirayama
+*/
+
+/* error message style */
+.error { 
+   color:red;
+}
+
+/* column header style */
+.header
+{ 
+   background-color: steelblue;
+   color: white;
+   text-align: left;
+}
+
+/* row styles */
+.oddRows
+{
+   padding-left: 5px;
+   background-color: lightcyan;
+}
+.evenRows
+{
+   padding-left: 5px;
+   background-color: lightskyblue;
+}
+
+/* table style */
+.table
+{
+   width: 1000px;
+}
